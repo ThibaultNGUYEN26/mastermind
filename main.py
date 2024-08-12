@@ -45,9 +45,9 @@ def check_combination(secret, guess):
 			color_counts[guess_color] -= 1
 		
 	for secret_color, guess_color in zip(secret, guess):
-		if guess_color in color_counts and color_counts[guess_color] > 0:
-			incorrect += 1
-			color_counts[guess_color] -= 1
+	        if guess_color != secret_color and guess_color in color_counts and color_counts[guess_color] > 0:
+		        incorrect += 1
+		        color_counts[guess_color] -= 1
 
 	return correct, incorrect
 
